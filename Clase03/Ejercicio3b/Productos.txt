@@ -1,0 +1,20 @@
+[
+	{
+		"title":"Heladeras",
+		"price":12500,
+		"thumbnail":"https://cdn3.iconfinder.com/data/icons/spring-2-1/30/Fence-256.png",
+		"id":1
+	},
+	{
+		"title":"Cocinas",
+		"price":18000,
+		"thumbnail":"https://cdn3.iconfinder.com/data/icons/spring-2-1/30/Fence-256.png",
+		"id":2
+	},
+	{
+		"title":"Lavarropas",
+		"price":15600,
+		"thumbnail":"https://cdn3.iconfinder.com/data/icons/spring-2-1/30/Fence-256.png",
+		"id":3
+	}
+]
