@@ -8,6 +8,7 @@ const { check } = require('express-validator');
 
 const{
     crearUsuario,
+    loginUsuario,
     renovarToken
 } = require('../controllers/auth')
 
@@ -18,13 +19,14 @@ const { Router } = require('express');
 const { validarCampos } = require('../middlewares/validar-campos');
 const router = Router();
 
-router.get ('/', (req, res) => {
-    res.json({
-        message: 'Bienvenido a nuestra API - Login'
-    });
-})
-
-
+router.post('/login', 
+    [
+        check('email', 'El email es obligatorio').isEmail(),
+        check('password', 'El password debe tener 8 caracteres como mínimo').isLength({ min:8}),
+        validarCampos
+    ],
+    loginUsuario );
+    
 
 router.post('/new', 
     [
