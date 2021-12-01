@@ -7,31 +7,11 @@ const Port = 8080;
 const app = express();
 dbConnection();
 
+
 app.use(express.static('public'));
 app.use(express.json());
-app.use('/api/auth', require('./routes/auth'))
-
-
-
-/* app.get ('/', (req, res) => {
-    res.json({
-        message: 'Bienvenido a nuestra API - Login'
-    });
-})
-
-app.post('/new', (req, res) => {
-    res.json({
-        message: 'Creación de un Nuevo Usuario'
-    });
-})
-
-app.post('/renew', (req, res) => {
-    res.json({
-        message: 'Renovamos tu permiso con este Token'
-    });
-}) */
-
-
+app.use('/api/auth', require('./routes/auth'));
+app.use('/api/events', require('./routes/events'));
 
 
 app.listen(process.env.Port, () => {
@@ -39,9 +19,6 @@ app.listen(process.env.Port, () => {
 })
 
 
-/* app.listen(Port, () => {
-    console.log(`Servidor corriendo en el puerto ${Port}`);
-}) */
 
 
 

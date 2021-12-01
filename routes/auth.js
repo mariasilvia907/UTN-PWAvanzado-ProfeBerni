@@ -3,21 +3,19 @@
     Rutas para el path
     /api/auth
 */
-const { check } = require('express-validator');
-
-
-const{
-    crearUsuario,
-    loginUsuario,
-    renovarToken
-} = require('../controllers/auth')
 
 //const express = require('express');
 //const router = express.Router();
 
 const { Router } = require('express');
 const { validarCampos } = require('../middlewares/validar-campos');
+const { check } = require('express-validator');
 const router = Router();
+const{
+    crearUsuario,
+    loginUsuario,
+    renovarToken
+} = require('../controllers/auth')
 
 router.post('/login', 
     [

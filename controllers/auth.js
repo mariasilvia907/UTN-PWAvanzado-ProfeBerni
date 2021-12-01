@@ -1,5 +1,5 @@
 
-const express = require('express');
+const {response} = require('express');
 const Usuario = require('../models/Usuario');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
@@ -7,7 +7,7 @@ const { generarToken } = require('../helpers/jwt')
 
 
 
-const crearUsuario = async (req, res = express.response) => {
+const crearUsuario = async (req, res = response) => {
     
     console.log(req.body);
 
@@ -60,7 +60,7 @@ const crearUsuario = async (req, res = express.response) => {
 }
 
 
-const loginUsuario = async (req, res) => {
+const loginUsuario = async (req, res = response) => {
 
     const { email, password } = req.body;
 
@@ -103,7 +103,7 @@ const loginUsuario = async (req, res) => {
 }
 
 
-const renovarToken = async (req, res = express.response) => {
+const renovarToken = async (req, res = response) => {
     
     const uid = req.uid;
     const name = req.name;
